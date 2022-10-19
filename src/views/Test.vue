@@ -1,5 +1,6 @@
 <script setup>
-    import {onMounted, ref} from 'vue'
+import TestComponent from '../components/TestComponent.vue';
+import {onMounted, computed, watch, ref} from 'vue'
 
     const msg = ref('Hello!')
     const count = ref(0)
@@ -15,10 +16,31 @@
     onMounted(() => {
         console.log('on mount');
     })
+    
+    const add = computed(() => {
+        return msg.value + count.value;
+    })
+
+    watch(count, (count, prevCount) => {
+        if (count % 2) {
+            console.log('odd');
+        } else {
+            console.log('even');
+        }
+    })
+
 </script>
 
 <template>
     <div class="test">
+        <TestComponent>
+            <template #title>
+                <h1>Vue.js</h1>
+            </template>
+            <template #desc>
+                <p>This is a JavaScript FrameWork</p>
+            </template>
+        </TestComponent>
         <p><input type="text" v-model="msg"></p>
         <p class="msg">{{msg}}</p>
         <input type="checkbox" v-model="check" />
@@ -28,6 +50,7 @@
             <p>{{item}}</p>
         </template>
         <p><button @click="count++">{{count}}</button></p>
+        <p>{{add}}</p>
     </div>
 </template>
 
