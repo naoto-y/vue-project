@@ -33,7 +33,15 @@ import {onMounted, computed, watch, ref} from 'vue'
 
 <template>
     <div class="test">
-        <TestComponent>
+        <TestComponent skill="9">
+            <template #title>
+                <h1>HTML5</h1>
+            </template>
+            <template #desc>
+                <p>This is Markup Lnaguage</p>
+            </template>
+        </TestComponent>
+        <TestComponent skill="7">
             <template #title>
                 <h1>Vue.js</h1>
             </template>
