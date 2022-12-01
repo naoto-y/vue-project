@@ -43,6 +43,14 @@ import {onMounted, computed, watch, ref} from 'vue'
         </TestComponent>
         <TestComponent skill="7">
             <template #title>
+                <h1>JavaScript</h1>
+            </template>
+            <template #desc>
+                <p>This is Programing Language</p>
+            </template>
+        </TestComponent>
+        <TestComponent skill="7">
+            <template #title>
                 <h1>Vue.js</h1>
             </template>
             <template #desc>

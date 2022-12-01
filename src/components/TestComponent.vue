@@ -11,6 +11,6 @@ defineProps({
     <div>
         <slot name="title"></slot>
         <slot name="desc"></slot>
-        <p>SKILL: {{skill}}pt</p>
+        <p>SKILL: {{skill}}/10pt</p>
     </div>
 </template>
